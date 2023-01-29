@@ -12,8 +12,8 @@ const HomePage = () => {
   }
 
   return (
-    <div className="flex h-screen flex-col items-center  justify-center  ">
-      <div className="flex flex-col w-[460px] md:w-md gap-y-10 mt-4 ">
+    <div className="flex h-screen flex-col items-center  justify-center px-5 ">
+      <div className="flex flex-col w-full md:w-[460px] md:w-md gap-y-10 mt-4 ">
         <div className="flex m-2 gap-2 justify-center items-center">
           <ImCross className="text-primary-dark h-8 w-8" />
           <BsRecordCircleFill className="text-secondary-dark h-8 w-8" />
