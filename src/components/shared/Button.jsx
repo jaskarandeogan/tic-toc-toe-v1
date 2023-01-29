@@ -10,6 +10,7 @@ const Button = ({
     children = "N/A",
     disabled = false,
     buttonType = "button",
+    className = "",
     ...props
 }) => {
     const sizeMap = new Map([
@@ -79,7 +80,7 @@ const Button = ({
                     "h-fit",
                     "inline-flex",
                     "items-center",
-                    "rounded",
+                    "justify-center",
                     "border",
                     "font-bold",
                     "focus:outline-none",
@@ -90,7 +91,7 @@ const Button = ({
                     sizeMap.get(size),
                     colorMap.get(type),
                     textColorMap.get(type),
-                    props.className
+                    className
                 )}
                 onClick={onClick}
                 disabled={disabled}

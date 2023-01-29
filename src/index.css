@@ -39,3 +39,26 @@ h3 {
 h4 {
   font-size: theme("fontSize.heading-sm");
 }
+
+
+
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.shadow-dark{
+  box-shadow: inset 0px -8px 0px #10212A;
+}
+
+.shadow-light{
+  box-shadow: inset 0px -8px 0px #F2F2F2;
+}
+
+.shadow-primary{
+  box-shadow: inset 0px -8px 0px #CC8B13;
+}
+
+.shadow-secondary{
+  box-shadow: inset 0px -8px 0px #118C87;
+}
