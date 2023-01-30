@@ -3,14 +3,18 @@ import classNames from "classnames";
 import { ImCross } from "react-icons/im";
 import { BsRecordCircleFill } from "react-icons/bs";
 import Button from "../shared/Button";
+import { useNavigate } from "react-router-dom";
 
-const EndOfRound = ({ result = "win", player = "circle", setOpen }) => {
+const EndOfRound = ({ result = "win", player = "circle", setOpen, playerTurn }) => {
+  const navigate = useNavigate();
   function handleQuit() {
     setOpen(false);
+    navigate("/");
   }
 
   function handleNextRound() {
     setOpen(false);
+    
   }
   return (
     <div className="w-full bg-dark-1 py-11">

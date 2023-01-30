@@ -3,8 +3,9 @@ import { ImCross } from "react-icons/im";
 import { BsRecordCircleFill } from "react-icons/bs";
 import { IoReloadSharp } from "react-icons/io5";
 
-const Header = ({setOpen}) => {
-
+const Header = ({ setOpen, turn = null }) => {
+  console.log(turn);
+  
   return (
     <div className="flex flex-1 items-center justify-between ">
       <div className="flex m-2 gap-2 justify-center items-center">
@@ -12,11 +13,14 @@ const Header = ({setOpen}) => {
         <BsRecordCircleFill className="text-secondary-dark " />
       </div>
       <div className="flex gap-2 items-center bg-dark-1 rounded-lg py-3 p-7 shadow-dark -translate-x-3">
-        <ImCross className="text-light-0 h-4 w-4" />
+        {
+          turn ==="X" ? <ImCross className="text-primary-dark h-4 w-4" /> : <BsRecordCircleFill className="text-secondary-dark h-4 w-4" />
+        }
         <span className="text-light-0 font-medium">TURN</span>
       </div>
-      <div className="bg-light-0 p-2 rounded-lg cursor-pointer "
-      onClick={() => setOpen(true)}
+      <div
+        className="bg-light-0 p-2 rounded-lg cursor-pointer "
+        onClick={() => setOpen(true)}
       >
         <IoReloadSharp className="text-dark-0" />
       </div>

@@ -12,7 +12,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/playground" element={<Playground />} />
       <Route path="/design-system" element={<DesignSystem />} />
-      <Route path="/game" element={<Game />} />
+      <Route path="/:player" element={<Game />} />
       <Route path="*" element={<h1 className="text-light-1">404 Not Found</h1>} />
     </Routes>
   );

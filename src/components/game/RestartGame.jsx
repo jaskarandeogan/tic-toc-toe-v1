@@ -11,6 +11,7 @@ const RestartGame = ({  setOpen }) => {
 
   function handleRestart() {
     setOpen(false);
+    window.location.reload();
   }
   return (
     <div className="w-full bg-dark-1 py-11">
@@ -23,7 +24,7 @@ const RestartGame = ({  setOpen }) => {
           <Button
             type="secondary-light"
             className={classNames(
-              "w-full justify-center rounded-lg  shadow-primary "
+              "w-full justify-center rounded-lg  shadow-primary"
             )}
             onClick={handleCancel}
           >

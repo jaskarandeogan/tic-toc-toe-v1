@@ -3,9 +3,11 @@ import { ImCross } from "react-icons/im";
 import { BsRecordCircleFill } from "react-icons/bs";
 import Button from "../components/shared/Button";
 import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const [selectedMark, setSelectedMark] = React.useState("cross");
+  const navigate = useNavigate();
 
   function handleSelectedPlayerMark(mark) {
     setSelectedMark(mark);
@@ -18,6 +20,7 @@ const HomePage = () => {
           <ImCross className="text-primary-dark h-8 w-8" />
           <BsRecordCircleFill className="text-secondary-dark h-8 w-8" />
         </div>
+        {console.log(selectedMark)}
         <div className="bg-dark-1 text-heading-sm font-medium rounded-2xl shadow-dark p-6">
           <span className="flex justify-center text-light-1  ">
             PICK PLAYER 1’S MARK
@@ -59,19 +62,31 @@ const HomePage = () => {
             </div>
           </div>
           <h4 className="text-body-sm font-medium text-light-0 flex justify-center mt-4">
-            REMEMBER : {selectedMark === "cross" ? "X" : "0" } GOES FIRST
+            REMEMBER : {selectedMark === "cross" ? "X" : "0"} GOES FIRST
           </h4>
         </div>
         <div className="flex flex-col gap-5">
           {/* button container */}
           <div className="">
-            <Button type="secondary-dark" className={classNames("w-full justify-center rounded-2xl pt-4 pb-6 shadow-primary ")}>
-              NEW GAME (VS CPU)
+            <Button
+              type="secondary-dark"
+              className={classNames(
+                "w-full justify-center rounded-2xl pt-4 pb-6 shadow-primary "
+              )}
+              onClick={() => navigate(`/${selectedMark}`)}
+            >
+              NEW GAME (VS PLAYER)
             </Button>
           </div>
           <div className="">
-            <Button type="primary-dark" className={classNames("w-full justify-center rounded-2xl pt-4 pb-6 shadow-secondary")}>
-              NEW GAME (VS PLAYER)
+            <Button
+              type="primary-dark"
+              className={classNames(
+                "w-full justify-center rounded-2xl pt-4 pb-6 shadow-secondary"
+              )}
+              disabled
+            >
+              NEW GAME (VS CPU)
             </Button>
           </div>
         </div>
